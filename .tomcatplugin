@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcatProjectProperties>
+    <rootDir>/</rootDir>
+    <exportSource>false</exportSource>
+    <reloadable>true</reloadable>
+    <redirectLogger>false</redirectLogger>
+    <updateXml>false</updateXml>
+    <warLocation>/Users/jchris/work/apache-tomcat-6.0.33/webapps/flipbook2.war</warLocation>
+    <extraInfo></extraInfo>
+    <webPath>/FlipbookPURL</webPath>
+</tomcatProjectProperties>

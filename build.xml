@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<project name="flipbook2" default="war">
+	<property name="ant.build.javac.source" value="1.6"/>
+	<property name="ant.build.javac.target" value="1.6"/>
+
+	<path id="compile.classpath">
+		<fileset dir="WEB-INF/lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+
+	<target name="init">
+		<mkdir dir="build/classes"/>
+		<mkdir dir="dist" />
+	</target>
+
+	<target name="compile" depends="init" >
+		<javac destdir="WEB-INF/classes" debug="true" srcdir="WEB-INF/src" source="1.6" target="1.6">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+
+	<target name="war" depends="compile">
+		<war destfile="dist/flipbook2.war" basedir="." webxml="WEB-INF/web.xml">
+      <include name="*"/>
+      <include name="WEB-INF/**"/>
+      <include name="auth/**"/>
+      <include name="lib/**"/>
+      <include name="css/**"/>
+      <include name="js/**"/>
+      <include name="images/**"/>
+      <include name="su-images/**"/>
+      <include name="touch/**"/>
+      <exclude name="dist" />
+		</war>
+	</target>
+
+	<target name="clean">
+		<delete dir="dist" />
+		<delete dir="build" />
+	</target>
+
+</project>
